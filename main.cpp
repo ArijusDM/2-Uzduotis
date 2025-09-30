@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
+#include <cctype>
 
 using std::cout;
 using std::cin;
@@ -33,13 +34,17 @@ struct Studentas{
 bool naturalCompare(const string& a, const string& b){
     size_t i=0, j=0;
     while(i < a.size() && j < b.size()){
-        if(std::isdigit(a[i]) && std::isdigit(b[j])){
+        if(std::isdigit(static_cast<unsigned char>(a[i])) && std::isdigit(static_cast<unsigned char>(b[j]))){
             size_t i2 = i;
-            while(i2 < a.size() && std::isdigit(a[i2])) i2++;
-            int numA = std::stoi(a.substr(i, i2 - i));
+            while(i2 < a.size() && std::isdigit(static_cast<unsigned char>(a[i2]))) i2++;
             size_t j2 = j;
-            while(j2 < b.size() && std::isdigit(b[j2])) j2++;
-            int numB = std::stoi(b.substr(j, j2 - j));
+            while(j2 < b.size() && std::isdigit(static_cast<unsigned char>(b[j2]))) j2++;
+
+            int numA = 0;
+            for(size_t k=i; k<i2; ++k) numA = numA*10 + (a[k]-'0');
+            int numB = 0;
+            for(size_t k=j; k<i2; ++k) numA = numA*10 + (b[k]-'0');
+
             if(numA != numB) return numA < numB;
             i = i2;
             j = j2;
@@ -243,7 +248,7 @@ int main(){
             string ndStr;
             cin.ignore();
 
-            cout<<"Iveskite studento ("<<Pirmas.var<<" "<<Pirmas.pav<<") namu darbu pazymius (iveskite 0, kad baigti): "<<endl;
+            cout<<"Iveskite studento ("<<Pirmas.var<<" "<<Pirmas.pav<<") namu darbu pazymius (paspauskite 2 kartus ENTER, kad baigti): "<<endl;
 
             int enter = 0;
 
@@ -266,7 +271,7 @@ int main(){
                         continue;
                     }
                 }
-                cout<<"Neteisinga ivestis, iveskite skaiciu nuo 1 iki 10 arba 0 pabaigai"<<endl;
+                cout<<"Neteisinga ivestis, iveskite skaiciu nuo 1 iki 10 arba paspauskite 2 kartus ENTER pabaigai"<<endl;
             }
             string egzStr;
 
