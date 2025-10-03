@@ -6,6 +6,7 @@
 #include "Utils.h"
 #include "Failai.h"
 #include "Ivedimas.h"
+#include <chrono>
 
 using std::cout;
 using std::cin;
@@ -20,9 +21,7 @@ using std::setprecision;
 using std::sort;
 using std::ifstream;
 using std::ofstream;
-
-
-
+using namespace std::chrono;
 
 int main(){
 
@@ -32,6 +31,8 @@ int main(){
     string genStr;
     cin>>genStr;
     if(!genStr.empty() && all_of(genStr.begin(), genStr.end(), ::isdigit) && stoi(genStr) == 1){
+        auto startGen = high_resolution_clock::now();
+
         cout<<"Pradedam generuoti failus...\n";
         GeneruotiFaila("Studentai1000.txt", 1000);
         GeneruotiFaila("Studentai10000.txt", 10000);
@@ -39,9 +40,13 @@ int main(){
         GeneruotiFaila("Studentai1000000.txt", 1000000);
         GeneruotiFaila("Studentai10000000.txt", 10000000);
         cout<<"Generavimas baigtas.\n";
-    }
-    vector <Studentas> Grupe;
 
+        auto endGen = high_resolution_clock::now();
+        auto trukmeGen = duration_cast<seconds>(endGen - startGen).count();
+        cout<<"Failu generavimas uztruko: "<<trukmeGen<<" s\n";
+    }
+
+    vector <Studentas> Grupe;
 
     cout<<"Pasirinkite duomenu ivedimo buda: "<<endl;
     cout<<"1 - Ivesti ranka"<<endl;
@@ -61,8 +66,13 @@ int main(){
     }
 
     if(ivBudas == 3){
-        Grupe = SkaitytiFaila("studentai10000.txt");
+        auto startRead = high_resolution_clock::now();
 
+        Grupe = SkaitytiFaila("Studentai10000000.txt");
+
+        auto endRead = high_resolution_clock::now();
+        auto trukmeRead = duration_cast<milliseconds>(endRead - startRead).count();
+        cout<<"Failo nuskaitymas uztruko: "<<trukmeRead<<" ms\n";
         if(Grupe.empty()){
             cout<<"Programa uzdaroma, nes nepavyko nuskaityti failo"<<endl;
             return 0;
@@ -123,6 +133,8 @@ int main(){
         cout<<"Neteisinga ivestis, iveskite skaiciu 1 arba 2"<<endl;
     }
 
+    auto startSort = high_resolution_clock::now();
+
     if(rusiavimas == 1){
         sort(Grupe.begin(), Grupe.end(), [](const Studentas &a, const Studentas &b){
             return naturalCompare(a.var, b.var);
@@ -179,5 +191,8 @@ int main(){
     spausdinti(outV, vargsiukai);
     spausdinti(outK, kietiakai);
 
+    auto endSort = high_resolution_clock::now();
+    auto trukmeSort = duration_cast<milliseconds>(endSort - startSort).count();
+    cout<<"Studentu rusiavimas ir isvedimas i failus uztruko: "<<trukmeSort<<" ms\n";
 
 }
