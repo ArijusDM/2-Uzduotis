@@ -94,16 +94,16 @@ int main(){
                 cout<<"Iveskite failo pavadinima nuskaitymui: ";
                 cin>>failoVardas;
             }
-        auto startRead = high_resolution_clock::now();
+        auto start_skaitymas = high_resolution_clock::now();
 
         Grupe = SkaitytiFaila(failoVardas);
 
-        auto endRead = high_resolution_clock::now();
-        auto trukmeRead = duration_cast<milliseconds>(endRead - startRead).count();
-        if(trukmeRead > 1000)
-            cout<<"Failo nuskaitymas uztruko: "<<trukmeRead/1000.0<<" s\n";
+        auto endSkaitymas = high_resolution_clock::now();
+        auto trukmeSkaitymo = duration_cast<milliseconds>(endSkaitymas - startSkaitymas).count();
+        if(trukmeSkaitymas > 1000)
+            cout<<"Failo nuskaitymas uztruko: "<<trukmeSkaitymas/1000.0<<" s\n";
         else
-            cout<<"Failo nuskaitymas uztruko: "<<trukmeRead<<" ms\n";
+            cout<<"Failo nuskaitymas uztruko: "<<trukmeSkaitymas<<" ms\n";
         if(Grupe.empty()){
             cout<<"Programa uzdaroma, nes nepavyko nuskaityti failo"<<endl;
             return 0;
