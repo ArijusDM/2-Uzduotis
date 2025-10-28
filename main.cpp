@@ -212,13 +212,6 @@ int main(){
     ofstream outV("vargsiukai.txt");
     ofstream outK("kietiakai.txt");
     
-    auto endIsvedimas = high_resolution_clock::now();
-    auto trukmeIsvedimas = duration_cast<milliseconds>(endIsvedimas - startIsvedimas).count();
-    if(trukmeIsvedimas > 1000)
-            cout<<"Failo isvedimas uztruko: "<<trukmeSkirstymas/1000.0<<" s\n";
-        else
-            cout<<"Failu isvedimas uztruko: "<<trukmeSkirstymas<<" ms\n";
-
     auto spausdinti = [&](ofstream &out, const Konteineris& grupe){
         out<<setw(15)<<left<<"Vardas"<<setw(20)<<left<<"Pavarde";
         if(pasirinkimas == 1) out<<setw(16)<<left<<"Galutinis (Vid.)"<<endl;
@@ -234,12 +227,16 @@ int main(){
         }
     };
     
-
-    
-    
     spausdinti(outV, vargsiukai);
     spausdinti(outK, kietiakai);
-
+    
+    
+    auto endIsvedimas = high_resolution_clock::now();
+    auto trukmeIsvedimas = duration_cast<milliseconds>(endIsvedimas - startIsvedimas).count();
+    if(trukmeIsvedimas > 1000)
+            cout<<"Failo isvedimas uztruko: "<<trukmeSkirstymas/1000.0<<" s\n";
+        else
+            cout<<"Failu isvedimas uztruko: "<<trukmeSkirstymas<<" ms\n";
 
 
 }
