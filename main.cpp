@@ -24,6 +24,7 @@ using std::sort;
 using std::ifstream;
 using std::ofstream;
 using namespace std::chrono;
+using Konteineris = std::vector<Studentas>
 
 int main(){
 
