@@ -95,12 +95,12 @@ int main(){
                 cout<<"Iveskite failo pavadinima nuskaitymui: ";
                 cin>>failoVardas;
             }
-        auto start_skaitymas = high_resolution_clock::now();
+        auto startSkaitymas = high_resolution_clock::now();
 
         Grupe = SkaitytiFaila(failoVardas);
 
         auto endSkaitymas = high_resolution_clock::now();
-        auto trukmeSkaitymo = duration_cast<milliseconds>(endSkaitymas - startSkaitymas).count();
+        auto trukmeSkaitymas = duration_cast<milliseconds>(endSkaitymas - startSkaitymas).count();
         if(trukmeSkaitymas > 1000)
             cout<<"Failo nuskaitymas uztruko: "<<trukmeSkaitymas/1000.0<<" s\n";
         else
@@ -198,7 +198,7 @@ int main(){
             return a.galVid < b.galVid;
         });
     }
-    
+
     auto endSkirstymas = high_resolution_clock::now();
     auto trukmeSkirstymas = duration_cast<milliseconds>(endSkirstymas - startSkirstymas).count();
     if(trukmeSkirstymas > 1000)
@@ -208,10 +208,10 @@ int main(){
 
 
     auto startIsvedimas = high_resolution_clock::now();
-    
+
     ofstream outV("vargsiukai.txt");
     ofstream outK("kietiakai.txt");
-    
+
     auto spausdinti = [&](ofstream &out, const Konteineris& grupe){
         out<<setw(15)<<left<<"Vardas"<<setw(20)<<left<<"Pavarde";
         if(pasirinkimas == 1) out<<setw(16)<<left<<"Galutinis (Vid.)"<<endl;
@@ -226,11 +226,13 @@ int main(){
             else out<<setw(18)<<left<<fixed<<setprecision(2)<<s.galVid<<setw(16)<<left<<fixed<<setprecision(2)<<s.galMed<<endl;
         }
     };
-    
+
     spausdinti(outV, vargsiukai);
     spausdinti(outK, kietiakai);
-    
-    
+
+    outV.close();
+    outK.close();
+
     auto endIsvedimas = high_resolution_clock::now();
     auto trukmeIsvedimas = duration_cast<milliseconds>(endIsvedimas - startIsvedimas).count();
     if(trukmeIsvedimas > 1000)
