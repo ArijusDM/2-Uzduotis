@@ -13,4 +13,6 @@ struct Studentas{
     double galMed;
 };
 
+using Konteineris = std::list<Studentas>; // arba std::vector<Studentas>
+
 #endif
