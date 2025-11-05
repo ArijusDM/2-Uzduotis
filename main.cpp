@@ -25,8 +25,8 @@ using std::ifstream;
 using std::ofstream;
 using namespace std::chrono;
 
-#define NAUDOTI_VECTOR
-//#define NAUDOTI_LIST
+//#define NAUDOTI_VECTOR
+#define NAUDOTI_LIST
 
 #ifdef NAUDOTI_VECTOR
 using Konteineris = std::vector<Studentas>;
@@ -192,8 +192,15 @@ kietiakai.shrink_to_fit();
             return false;
         });
         Grupe.erase(it, Grupe.end());
+    } else{
+        for(auto it = Grupe.begin(); it != Grupe.end(); ){
+            double galutinis = (pasirinkimas == 1? it->galVid : (pasirinkimas == 2 ? it->galMed : it->galVid));
+            if(galutinis < 5.0){
+                auto toMove = it++;
+                vargsiukai2.splice(vargsiukai2.end(), Grupe, toMove);
+            } else ++it;
+        }
     }
-
 #ifdef NAUDOTI_VECTOR
 vargsiukai2.shrink_to_fit();
 Grupe.shrink_to_fit();
