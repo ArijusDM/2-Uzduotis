@@ -3,7 +3,6 @@
 
 #include <string>
 #include <vector>
-#include "Studentas.h"
 
 bool naturalCompare(const std::string& a, const std::string& b);
 double median(std::vector<int> &v);
