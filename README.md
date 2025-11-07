@@ -1,3 +1,33 @@
+# v1.1
+
+Naudojant struct:
+Studentai100000.txt (5 bandymų vidurkiai) - generavimas 194.2ms, nuskaitymas 173.6ms, 2 strategijos rūšiavimas 4ms, rūšiavimas ir skirstymas kartu 64.2ms, išvedimas 253.6ms.
+Studentai1000000.txt (5 bandymų vidurkiai) - generavimas 1.91s, nuskaitymas 1.77s, 2 strategijos rūšiavimas 44.8ms, rūšiavimas ir skirstymas kartu 963.2ms, išvedimas 2.57s.
+Naudojant class:
+Studentai100000.txt (5 bandymų vidurkiai) - generavimas 197.4ms, nuskaitymas 180ms, 2 strategijos rūšiavimas 4ms, rūšiavimas ir skirstymas kartu 16ms, išvedimas 110.4ms.
+Studentai1000000.txt (5 bandymų vidurkiai) - generavimas 1.94s, nuskaitymas 1.84s, 2 strategijos rūšiavimas 45.8ms, rūšiavimas ir skirstymas kartu 246.2ms, išvedimas 1.09s.
+
+Išvados: naudojant struktūras, failų generavimas ir nuskaitymas vyksta šiek tiek greičiau nei class, rūšiavimas panašus abiejų, o skirstymas ir išvedimas vyksta žymiai greičiau su class.
+
+v1.1 commit 9e0d5b7 – pakeista iš struct Studentas į class Studentas
+v1.1 commit 33eae19 – pridėti konstruktoriai ir getteriai
+v1.1 commit 66bee9e – pridėti setteriai
+v1.1 commit 459b3c3 – pridėti kiti metodai
+v1.1 commit 3ce5b02 – pridėta eilutė išvedimui
+v1.1 commit 4162589 – pridėtos ne-member funkcijos
+v1.1 commit 98e5e29 – pridėtas Studentas.cpp failas
+v1.1 commit 31a615c – pridėtas galutinio balo skaičiavimas
+v1.1 commit 3e40ce9 – pridėtas perskaitymas iš srauto
+v1.1 commit 87ed7c7 – pridėtas abiejų galutinių balų skaičiavimas
+v1.1 commit c70b8d7 – pridėtas išvedimas į srautą
+v1.1 commit 1a5befb – sutvarkytas konteineris, kad veiktų su class
+v1.1 commit 41657eb - panaikintas vector arba list pasirinkimas iš main.cpp
+v1.1 commit 5bfeb79 – sutvarkytas Ivedimas.cpp failas, kad veiktų su class
+v1.1 commit 23c2e69 – sutvarkytos Studentas.cpp klaidos
+v1.1 commit 0f948fe – sutvarkytas Failai.cpp failas, kad veiktų su class
+v1.1 commit 09fd58d – sutvarkytas Studentas.h failas, kad veiktų su class
+v1.1 commit 02f7757 – sutvarkyta Utils.h failo klaida
+
 # v1.0
 
 Naudojimosi instrukcija: iš pradžių pasirenkama, kokio dydžio studentų failą norima generuoti (galima ir negeneruoti).
