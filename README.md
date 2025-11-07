@@ -16,6 +16,7 @@ v1.0 commit 919a733 - sutvarkyta 3 vector‘ių strategija
 v1.0 commit 7d49738 - pridėta 3 strategija list‘ui
 v1.0 commit afb5ef3 – pakeista 2 vector’iaus strategija iš remove_if į partition
 v1.0 commit c4528d0 – sutvarkytos klaidos ir panaikintos nereikalingos eilutės
+v1.0 commit 427c26f - pakeista, kad būtų galima pasirinkti, kurią strategiją naudoti
 
 Testavimo laikai
 Sistemos parametrai:
