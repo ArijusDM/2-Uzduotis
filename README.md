@@ -1,3 +1,19 @@
+# v1.2
+
+commit e1a237b – pridėtas „Rule of Three“ į „Studentas.h“
+commit 4c221d1 – pridėtas destructor į “Studentas.cpp”
+commit 942ded7 – pridėtas copy constructor į “Studentas.cpp”
+commit 00485ee – pridėtas copy assignment į “Studentas.cpp”
+commit 8ab04c3 – sutvarkytas nuskaitymas “Studentas.cpp”
+commit 79b4edf – pakeista, kad būtų toks pat formatas, kaip failų generavimas “Studentas.cpp”
+commit e9466bd – sutvarkytos klaidos “Studentas.cpp”
+commit 9d6c735 – patvarkytas “Ivedimas.cpp” tmp užpildymas
+commit ca2c313 – pridėtas operator>> į “Failai.cpp”
+commit b7a004b – pridėtas operator<< į “main.cpp”
+commit a1754ca – pridėtas include “Studentas.h” į “Failai.cpp”
+commit 3fce7c1 – pridėtas include <limits> į “Ivedimas.cpp”
+commit 15f5ccb – sutvarkyta klaida “main.cpp”
+
 # v1.1
 
 Naudojant struct:
