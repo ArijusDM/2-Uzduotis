@@ -317,6 +317,7 @@ int main(){
 
         for(const auto &s: grupe){
             out<<s<<'\n';
+        }
     };
 
     spausdinti(outV, vargsiukai);
