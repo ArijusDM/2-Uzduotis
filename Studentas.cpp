@@ -70,6 +70,10 @@ std::ostream& operator<<(std::ostream& os, const Studentas& s){
       return os;
 }
 
+std::istream& operator>>(std::istream& is, Studentas& s){
+    return s.readStudent(is)
+}
+
 bool compare(const Studentas& a, const Studentas& b){
     return a.vardas() < b.vardas();
 }
