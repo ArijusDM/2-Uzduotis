@@ -29,7 +29,7 @@ int main(){
 
     string failoVardas;
 
-    srand(time(0));
+    srand(static_cast<unsigned int>(time(0)));
 
     cout<<"Pasirinkite faila generuoti (0 - negeneruoti failo):\n";
     cout<<"1 - 1000 studentu failas\n";
@@ -316,11 +316,7 @@ int main(){
         out<<"---------------------------------------------------------------------"<<endl;
 
         for(const auto &s: grupe){
-            out<<setw(15)<<left<<s.vardas()<<setw(20)<<left<<s.pavarde();
-            if(pasirinkimas == 1) out<<setw(16)<<left<<fixed<<setprecision(2)<<s.galVid()<<endl;
-            else if(pasirinkimas == 2) out<<setw(16)<<left<<fixed<<setprecision(2)<<s.galMed()<<endl;
-            else out<<setw(18)<<left<<fixed<<setprecision(2)<<s.galVid()<<setw(16)<<left<<fixed<<setprecision(2)<<s.galMed()<<endl;
-        }
+            out<<s<<'\n';
     };
 
     spausdinti(outV, vargsiukai);
