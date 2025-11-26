@@ -9,7 +9,7 @@ Studentas::Studentas(const Studentas& other){
     vardas_ = other.vardas_;
     pavarde_ = other.pavarde_;
     nd_ = other.nd_;
-    egzaminas_ = egzaminas_;
+    egzaminas_ = other.egzaminas_;
     galVid_ = other.galVid_;
     galMed_ = other.galMed_;
 }
@@ -19,7 +19,7 @@ Studentas& Studentas::operator=(const Studentas& other){
         vardas_ = other.vardas_;
         pavarde_ = other.pavarde_;
         nd_ = other.nd_;
-        egzaminas_ = egzaminas_;
+        egzaminas_ = other.egzaminas_;
         galVid_ = other.galVid_;
         galMed_ = other.galMed_;
     }
