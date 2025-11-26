@@ -1,10 +1,6 @@
 #include "Studentas.h"
 #include <iomanip>
 
-Studentas::~Studentas(){
-    nd_.clear();
-}
-
 Studentas::Studentas(const Studentas& other){
     vardas_ = other.vardas_;
     pavarde_ = other.pavarde_;
