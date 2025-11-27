@@ -1,3 +1,18 @@
+# v1.5
+
+Commit 31e6e03 - Sutvarkytas “Studentas.cpp” bug’as.
+Commit 34644e7 - „Studentas.cpp“ ištrintas destruktorius, nes jis lėtino programos veikimą.
+Commit d697d89 - Sukurtas „Zmogus.h“ abstrakti bazinė klasė.
+Commit d7d79a4 - Papildytas “Studentas.h” failas.
+Commit 98a4e96 - Papildytas “Studentas.cpp” failas.
+Commit 1d6e39f  - Papildytas “Utils.cpp” failas.
+Commit 2c28945 - Patvarkytas “Failai.cpp” ir pridėta žinutė, jei nepavyksta nuskaityti eilutės iš failo.
+Commit 44eeb97 - Pakeistas “Ivedimas.cpp” failas.
+Commit bab63bd - Sutvarkytas “Zmogus.h” failas.
+Commit 794cae9 - Sutvarkytas “Zmogus.h” failas.
+Commit 0efd824 - Sutvarkytas “Studentas.h” failas.
+Commits 1b27d53 - 8ab0fe1 - Sutvarkytas visas kodas ir ištrintas „Zmogus.h“ failas.
+
 # v1.2
 
 commit e1a237b – pridėtas „Rule of Three“ į „Studentas.h“
